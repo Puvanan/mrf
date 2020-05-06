@@ -1,0 +1,43 @@
+@{
+    Layout = null;
+}
+@model MO_Entity.Login
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Login - Merchant Online System (MOS)</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/js")
+</head>
+<body>
+    <div data-stellar-background-ratio="0.25" style="background-image: url(@System.Configuration.ConfigurationManager.AppSettings["Baseurl"]/Images/bg-01.jpg);" class="page-common-background"></div>
+
+    <div class="c-col-login page-login-wrapper">
+        <div class="page-login text-center">
+            <div class="pb-logo text-center padding-btm-30"><a href="/" class="pb-logo-a"><img src="~/Images/pblogo.png"></a></div>
+            <div class="title-section">
+                <h1 class="login-hello">Merchant Online System</h1>
+                <p>Wish you a good day</p>
+            </div>
+            <form action="@System.Configuration.ConfigurationManager.AppSettings["Baseurl"]/Home/Index" method="post" autocomplete="off" id="login-form">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "validation-summary alert alert-danger" })
+                <div class="row field-area">
+                    <div class="infor text-center">
+                        @Html.TextBoxFor(model => model.Username, new { placeholder = "Windows ID eg. abc12345", @required = "required", @Value = "" })
+                    </div>
+                    <div class="infor text-center">
+                        @Html.PasswordFor(model => model.Password, new { placeholder = "Password", @required = "required", @Value = "" })
+                    </div>
+                </div>
+                <div class="submit-area text-center">
+                    <button type="submit">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
