@@ -1,0 +1,16 @@
+}
+.facet-list li.placeholder {
+  height: 1.2em
+}
+.facet {
+  border: 1px solid #bbb;
+  background-color: #fafafa;
+  cursor: move;
+}
+.facet.ui-sortable-helper {
+  opacity: 0.5;
+}
+.placeholder {
+  border: 1px solid orange;
+  background-color: #fffffd;
+}
