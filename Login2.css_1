@@ -1,0 +1,42 @@
+
+  80% {
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: .1;
+    transform: scale(1);
+  }
+}
+
+@keyframes screenUp {
+  to {
+    fill: #ffd2a6;
+  }
+}
+
+@keyframes screenText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes creditCardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(10px) translateX(-5px);
+  }
+}
+
+@keyframes moneyUp {
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  to {
+    opacity: 0;
+    transform: scale(1) translateY(-50px);
+  }
+}
